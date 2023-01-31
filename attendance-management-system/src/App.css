@@ -1,0 +1,31 @@
+.App {
+  height: 100vh;
+  width: 100%;
+}
+.content {
+  height: 100%;
+  width: 100%;
+}
+.card-absent {
+  background: rgba(252, 3, 3, 0.336);
+  box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(252, 8, 8, 0.18);
+  width: 100%;
+  height: 100%;
+}
+.card-present {
+  background: rgba(60, 252, 182, 0.336);
+  box-shadow: 0 8px 32px 0 rgba(54, 211, 153, 0.466);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(54, 211, 153, 0.534);
+  width: 100%;
+  height: 100%;
+}
+.h-dashboard-screen {
+  height: calc(100vh - 67px);
+}

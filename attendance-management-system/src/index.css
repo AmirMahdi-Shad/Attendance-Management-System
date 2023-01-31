@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: iranyekanB;
+  src: url("./fonts/IRYEKANB.woff2");
+}
+@font-face {
+  font-family: iranyekanR;
+  src: url("./fonts/IRYEKANR.woff2");
+}
+@font-face {
+  font-family: iranyekanl;
+  src: url("./fonts/IRYEKANL.woff2");
+}
+
+body {
+  margin: 0;
+}
+
+.bg-login {
+  background: url(./img/Bg.jpg);
+  width: 100%;
+  /* height: 100%; */
+}
+.bg-chart {
+  background-color: rgb(32, 32, 32);
+  width: 100%;
+  /* height: 100%; */
+}
+html {
+  text-align: center;
+  font-family: iranyekanR, Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
