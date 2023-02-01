@@ -7,31 +7,33 @@ const DailyResTable = ({ items, isGreen, type }) => {
         isGreen ? "border-green-600" : "border-red-600"
       }`}
     >
-      <h1>{type}</h1>
-      <table className="table w-full">
-        <thead>
-          <tr>
-            <th></th>
-            <th>اسم </th>
-            <th>رشته </th>
-            <th>پایه</th>
-          </tr>
-        </thead>
-        <tbody>
+      <h1 className={` w-20 p-3 rounded-lg ${
+                isGreen ? "bg-green-600" : "bg-red-600"
+              }`}>{type}</h1>
+<div>
           {items.map((item) => {
             return (
-              <tr className="hover">
-                <th>{item.id}</th>
-                <td>{item.name}</td>
-                <td>{item.unit}</td>
-                <td>{item.base}</td>
-              </tr>
+              <div className={`flex justify- w-80 bg-primary my-4 h-11 items-center rounded-lg  borde-r-4  ${
+                isGreen ? "border-green-600" : "border-red-600"
+              }`}>
+                <div className={`border-2 w-1/3 h-full flex items-center justify-center p-4 rounded-r-lg ${
+                isGreen ? "border-green-600 bg-green-600" : "border-red-600 bg-red-600"
+              }`}>{item.id}</div>
+                <div className={`border-2 w-96 text-sm h-full flex items-center justify-center p-4  ${
+                isGreen ? "border-green-600" : "border-red-600"
+              }`}>{item.name}</div>
+                <div className={`border-2 w-1/3 h-full flex items-center justify-center p-4  ${
+                isGreen ? "border-green-600" : "border-red-600"
+              }`}>{item.unit}</div>
+                <div className={`border-2 w-1/3 h-full flex items-center justify-center p-4 rounded-l-lg  ${
+                isGreen ? "border-green-600" : "border-red-600"
+              }`}>{item.base}</div>
+              </div>
             );
           })}
-        </tbody>
-      </table>
+        </div>
     </div>
-  );
+    );
 };
 
 export default DailyResTable;

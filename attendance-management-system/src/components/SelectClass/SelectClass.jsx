@@ -120,15 +120,7 @@ const SelectClass = ({ setAttenData }) => {
   return (
     <div className="card glass h-fit w-96">
       <div className="card-body items-center text-center">
-        {/* {calender && (
-          <Calendar
-            locale="fa"
-            value={selectedDay}
-            onChange={setSelectedDay}
-            shouldHighlightWeekends
-          />
-        )} */}
-        <ThemeProvider theme={theme}>
+        {/* <ThemeProvider theme={theme}>
           <LocalizationProvider
             dateAdapter={AdapterJalali}
             adapterLocale={locale}
@@ -143,8 +135,8 @@ const SelectClass = ({ setAttenData }) => {
               renderInput={(params) => <TextField {...params} />}
             />
           </LocalizationProvider>
-        </ThemeProvider>
-        {/* <div>
+        </ThemeProvider> */}
+        <div>
           <h3 className="card-title font-bold text-lg">
             کلاس خود را انتخاب کنید
           </h3>
@@ -206,7 +198,7 @@ const SelectClass = ({ setAttenData }) => {
               class="input input-bordered w-full m-2 max-w-xs"
             />
           </div>
-        </div> */}
+        </div>
         <div className="card-actions">
           <label className="btn" onClick={filterHandler}>
             ثبت
