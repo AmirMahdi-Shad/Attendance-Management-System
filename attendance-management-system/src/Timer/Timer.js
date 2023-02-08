@@ -1,5 +1,5 @@
 // Set the date we're counting down to
-let countDownDate = new Date("Jan 20, 2023 00:00:00").getTime();
+let countDownDate = new Date("feb 5, 2023 00:00:00").getTime();
 const timer = () => {
   // Get today's date and time
   let now = new Date().getTime();

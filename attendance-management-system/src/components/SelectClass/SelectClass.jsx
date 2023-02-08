@@ -3,29 +3,17 @@ import { useEffect, useState } from "react";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import TextField from "@mui/material/TextField";
-import dayjs from "dayjs";
-import { locale } from "dayjs/locale/fa";
-import AdapterJalali from "@date-io/jalaali";
-import { createTheme, ThemeProvider } from "@mui/material";
+import HashLoader from "react-spinners/HashLoader";
 
 const SelectClass = ({ setAttenData }) => {
   const [filter, setFilter] = useState({ conjunction: "or" });
   const [date, setDate] = useState("");
-  const [calender, setCalender] = useState(false);
   const [selectedDay, setSelectedDay] = useState(null);
-  const [value, setValue] = useState(new Date(2022, 3, 7));
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const theme = createTheme({
-    palette: {
-      primary: { main: "#F9D72F" },
-    },
-  });
-
   const filterHandler = () => {
+    setLoading(true);
     attendanceHandler();
   };
   const changeHandler = (e) => {
@@ -38,15 +26,6 @@ const SelectClass = ({ setAttenData }) => {
       }
     }
   };
-
-  useEffect(() => {
-    setCalender(true);
-    return () => {
-      setCalender(false);
-      setDate(false);
-      setSelectedDay(false);
-    };
-  }, []);
 
   useEffect(() => {
     if (selectedDay) {
@@ -70,7 +49,7 @@ const SelectClass = ({ setAttenData }) => {
             {
               key: "date",
               operator: "=",
-              value: "1002",
+              value: filter.date,
             },
             {
               key: "course",
@@ -116,10 +95,21 @@ const SelectClass = ({ setAttenData }) => {
       });
     }
   };
-
+  if (loading)
+    return (
+      <div className='h-dashboard-screen flex flex-col items-center justify-center bg-chart'>
+        <HashLoader
+          color='#F9D72F'
+          cssOverride={{}}
+          loading
+          size={80}
+          speedMultiplier={1}
+        />
+      </div>
+    );
   return (
-    <div className="card glass h-fit w-96">
-      <div className="card-body items-center text-center">
+    <div className='card glass h-fit w-96'>
+      <div className='card-body items-center text-center'>
         {/* <ThemeProvider theme={theme}>
           <LocalizationProvider
             dateAdapter={AdapterJalali}
@@ -137,14 +127,14 @@ const SelectClass = ({ setAttenData }) => {
           </LocalizationProvider>
         </ThemeProvider> */}
         <div>
-          <h3 className="card-title font-bold text-lg">
+          <h3 className='card-title font-bold text-lg'>
             کلاس خود را انتخاب کنید
           </h3>
-          <div className="flex flex-col ">
+          <div className='flex flex-col '>
             <select
-              name="unit"
+              name='unit'
               onChange={changeHandler}
-              className="select select-bordered  w-full m-2 max-w-xs"
+              className='select select-bordered  w-full m-2 max-w-xs'
             >
               <option disabled selected>
                 رشته
@@ -155,9 +145,9 @@ const SelectClass = ({ setAttenData }) => {
               <option>ساختمان</option>
             </select>
             <select
-              name="base"
+              name='base'
               onChange={changeHandler}
-              className="select select-bordered  w-full m-2 max-w-xs"
+              className='select select-bordered  w-full m-2 max-w-xs'
             >
               <option disabled selected>
                 پایه
@@ -167,9 +157,9 @@ const SelectClass = ({ setAttenData }) => {
               <option>12</option>
             </select>
             <select
-              name="course"
+              name='course'
               onChange={changeHandler}
-              className="select select-bordered  w-full m-2 max-w-xs"
+              className='select select-bordered  w-full m-2 max-w-xs'
             >
               <option disabled selected>
                 درس
@@ -179,28 +169,28 @@ const SelectClass = ({ setAttenData }) => {
               <option>شیمی</option>
               <option>کارآفرینی</option>
             </select>
-            <div className="form-control">
-              <label className="label cursor-pointer">
-                <span className="label-text">فیلتر پیشرفته</span>
+            <div className='form-control'>
+              <label className='label cursor-pointer'>
+                <span className='label-text'>فیلتر پیشرفته</span>
                 <input
-                  type="checkbox"
-                  name="conjunction"
+                  type='checkbox'
+                  name='conjunction'
                   onChange={changeHandler}
-                  className="checkbox"
+                  className='checkbox'
                 />
               </label>
             </div>
             <input
-              type="text"
-              placeholder="تاریخ"
-              name="date"
+              type='text'
+              placeholder='تاریخ'
+              name='date'
               onChange={changeHandler}
-              class="input input-bordered w-full m-2 max-w-xs"
+              class='input input-bordered w-full m-2 max-w-xs'
             />
           </div>
         </div>
-        <div className="card-actions">
-          <label className="btn" onClick={filterHandler}>
+        <div className='card-actions'>
+          <label className='btn' onClick={filterHandler}>
             ثبت
           </label>
         </div>

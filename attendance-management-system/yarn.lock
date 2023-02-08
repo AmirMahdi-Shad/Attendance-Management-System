@@ -8417,6 +8417,14 @@
   dependencies:
     "jalaali-js" "^1.1.0"
 
+"react-persian-calendar-date-picker@^1.1.6":
+  "integrity" "sha512-u2FSl/jc6tA71PXwIt4cV72FNkVOiHI/qJ/nCVQHieIHWuEV79QGQaB9hdMxAAYvOqBzYqx8OIzYSPp3E6DToA=="
+  "resolved" "https://registry.npmjs.org/react-persian-calendar-date-picker/-/react-persian-calendar-date-picker-1.1.6.tgz"
+  "version" "1.1.6"
+  dependencies:
+    "jalaali-js" "^1.1.0"
+    "prop-types" "^15.7.2"
+
 "react-refresh@^0.11.0", "react-refresh@>=0.10.0 <1.0.0":
   "integrity" "sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A=="
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.11.0.tgz"
@@ -8506,6 +8514,11 @@
   dependencies:
     "fast-equals" "^2.0.0"
     "react-transition-group" "2.9.0"
+
+"react-spinners@^0.13.8":
+  "integrity" "sha512-3e+k56lUkPj0vb5NDXPVFAOkPC//XyhKPJjvcGjyMNPWsBKpplfeyialP74G7H7+It7KzhtET+MvGqbKgAqpZA=="
+  "resolved" "https://registry.npmjs.org/react-spinners/-/react-spinners-0.13.8.tgz"
+  "version" "0.13.8"
 
 "react-toastify@^9.0.8":
   "integrity" "sha512-EwM+teWt49HSHx+67qI08yLAW1zAsBxCXLCsUfxHYv1W7/R3ZLhrqKalh7j+kjgPna1h5LQMSMwns4tB4ww2yQ=="

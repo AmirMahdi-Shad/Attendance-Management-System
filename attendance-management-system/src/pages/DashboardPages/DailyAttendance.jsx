@@ -21,21 +21,21 @@ const DailyAttendance = () => {
   }, []);
   return (
     <>
-      <div className="toast toast-start">
-        <div className="alert alert-info">
+      <div className='toast toast-start'>
+        <div className='alert alert-info'>
           <div>
             <span>{date}</span>
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center h-dashboard-screen bg-login">
+      <div className='flex justify-center items-center h-dashboard-screen bg-login overflow-y-auto'>
         <Routes>
           <Route
-            path="selectClass"
+            path='selectClass'
             element={<SelectClass setAttenData={setAttenData} />}
           />
           <Route
-            path="result"
+            path='result'
             element={<DailyReault attenData={attenData} />}
           />
         </Routes>

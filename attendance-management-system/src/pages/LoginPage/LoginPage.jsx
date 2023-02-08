@@ -34,9 +34,15 @@ const LoginPage = () => {
         localStorage.setItem("accessToken", res.data.accessToken);
         localStorage.setItem("expiretime", res.data.expirationTime);
         navigate("/");
-        toast.success(res.data.message);
+        toast.success("خوش آمدید", {
+          position: "top-right",
+        });
       })
-      .catch((err) => console.log(err));
+      .catch((err) =>
+        toast.error("وضعیت اینترنت خود را بررسی کنید", {
+          position: "top-right",
+        })
+      );
   };
   useEffect(() => {
     setInterval(() => {
@@ -46,36 +52,36 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="hero min-h-full relative bg-login">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className='hero min-h-full relative bg-login'>
+        <div className='hero-content flex-col lg:flex-row-reverse'>
           <img
             src={logo}
-            className="max-w-sm rounded-lg shadow-2xl hidden lg:block"
+            className='max-w-sm rounded-lg shadow-2xl hidden lg:block'
           />
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <div className="card-body">
-              <h1 className="text-3xl font-bold">سیستم حضور و غیاب</h1>
+          <div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
+            <div className='card-body'>
+              <h1 className='text-3xl font-bold'>سیستم حضور و غیاب</h1>
               <form
                 onSubmit={submitHandler}
-                className="flex justify-center items-center flex-col h-ful"
+                className='flex justify-center items-center flex-col h-ful'
               >
                 <input
-                  name="username"
-                  type="text"
-                  placeholder="نام کاربری"
-                  className="input input-bordered w-full max-w-xs m-7"
+                  name='username'
+                  type='text'
+                  placeholder='نام کاربری'
+                  className='input input-bordered w-full max-w-xs m-7'
                   onChange={changeHandler}
                 />
                 <input
-                  name="password"
-                  type="text"
-                  placeholder="پسورد"
-                  className="input input-bordered w-full max-w-xs m-7"
+                  name='password'
+                  type='text'
+                  placeholder='پسورد'
+                  className='input input-bordered w-full max-w-xs m-7'
                   onChange={changeHandler}
                 />
                 <button
-                  type="submit"
-                  className="btn btn-block btn-secondary m-5"
+                  type='submit'
+                  className='btn btn-block btn-secondary m-5'
                 >
                   ورود
                 </button>
@@ -84,28 +90,28 @@ const LoginPage = () => {
           </div>
         </div>
         {/* timer */}
-        <div className="grid grid-flow-row gap-5 text-center auto-cols-max fixed left-0">
-          <div className="flex flex-col">
-            <span className="font-mono text-5xl">
+        <div className='grid grid-flow-row gap-5 text-center auto-cols-max fixed left-0'>
+          <div className='flex flex-col'>
+            <span className='font-mono text-5xl'>
               <span>{timerRange.days}</span>
             </span>
             روز
           </div>
 
-          <div className="flex flex-col">
-            <span className="font-mono text-5xl">
+          <div className='flex flex-col'>
+            <span className='font-mono text-5xl'>
               <span>{timerRange.hours}</span>
             </span>
             ساعت
           </div>
-          <div className="flex flex-col">
-            <span className="font-mono text-5xl">
+          <div className='flex flex-col'>
+            <span className='font-mono text-5xl'>
               <span>{timerRange.minutes}</span>
             </span>
             دقیقه
           </div>
-          <div className="flex flex-col">
-            <span className="font-mono text-5xl">
+          <div className='flex flex-col'>
+            <span className='font-mono text-5xl'>
               <span>{timerRange.seconds}</span>
             </span>
             ثانیه

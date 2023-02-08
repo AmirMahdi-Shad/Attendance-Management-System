@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import FilterInputs from "../FilterInputs/FilterInputs";
 import DailyResTable from "../common/DailyResTable";
+import { useNavigate } from "react-router-dom";
+import HashLoader from "react-spinners/HashLoader";
 
 const DailyReault = ({ attenData }) => {
   const [attenDataCopy, setAttenDataCopy] = useState(attenData);
@@ -12,6 +14,7 @@ const DailyReault = ({ attenData }) => {
   const [absents, setAbsents] = useState([]);
   const [presents, setPresents] = useState([]);
   const [stds, setStds] = useState([]);
+  const navigate = useNavigate();
 
   // const countHandler = () => {
   //   let PCount = 0;
@@ -122,62 +125,63 @@ const DailyReault = ({ attenData }) => {
   };
   useEffect(() => {
     // countHandler();
-    studentsIdHandler();
+    if (attenData) studentsIdHandler();
+    if (!attenData) navigate("/dailyattendance/selectClass");
   }, []);
 
   return (
-    <>
+    <div className='flex flex-col justify-center items-center'>
       <div
-        className="stats shadow xl:left-3 absolute top-24 w-screen xl:w-fit flex-col"
+        className='stats shadow  w-screen xl:w-fit  flex-col bg-neutral mt-28'
         onClick={showStudents}
       >
-        <div className="stat">
-          <div className="stat-figure text-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="inline-block w-8 h-8 stroke-current"
+        <div className='stat text-red-600'>
+          <div className='stat-figure text-secondary'>
+            {/* <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              className='inline-block w-8 h-8 stroke-current'
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
               ></path>
-            </svg>
+            </svg> */}
           </div>
-          <div className="stat-title">غایبان </div>
-          <div className="stat-value text-red-500">{absentCount}</div>
-          <div className="stat-desc">کلیک کنید تا نمایش داده شود </div>
+          <div className='stat-title'>غایبان </div>
+          <div className='stat-value text-red-500'>{absentCount}</div>
+          <div className='stat-desc'>کلیک کنید تا نمایش داده شود </div>
         </div>
 
-        <div className="stat">
-          <div className="stat-figure text-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="inline-block w-8 h-8 stroke-current"
+        <div className='stat text-green-600'>
+          <div className='stat-figure text-secondary'>
+            {/* <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              className='inline-block w-8 h-8 stroke-current'
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                d='M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4'
               ></path>
-            </svg>
+            </svg> */}
           </div>
-          <div className="stat-title">حاضران </div>
-          <div className="stat-value text-green-500">{presentsCount}</div>
-          <div className="stat-desc">کلیک کنید تا نمایش داده شود </div>
+          <div className='stat-title'>حاضران </div>
+          <div className='stat-value text-green-500'>{presentsCount}</div>
+          <div className='stat-desc'>کلیک کنید تا نمایش داده شود </div>
         </div>
       </div>
-      <div className="flex">
-        <DailyResTable items={presents} isGreen={true} type="حاضران" />
-        <DailyResTable items={absents} isGreen={false} type="غایبان" />
+      <div className='flex flex-col xl:flex-row text-neutral'>
+        <DailyResTable items={presents} isGreen={true} type='حاضران' />
+        <DailyResTable items={absents} isGreen={false} type='غایبان' />
       </div>
-    </>
+    </div>
   );
 };
 
