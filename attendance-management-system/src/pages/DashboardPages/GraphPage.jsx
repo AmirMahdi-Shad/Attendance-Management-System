@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { GrFormPreviousLink } from "react-icons/gr";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { HashLoader } from "react-spinners";
 import {
   BarChart,
@@ -19,6 +20,7 @@ const GraphPage = () => {
   const [searchParams] = useSearchParams();
   const [id, setId] = useState(searchParams.get("id"));
   const [userData, setUserData] = useState();
+  const navigate = useNavigate();
   const dataHandler = (data) => {
     setUserData(data);
     const pcount = data.mehr.filter((value) => value).length;
@@ -128,7 +130,13 @@ const GraphPage = () => {
     );
   return (
     <div className='h-dashboard-screen flex flex-col items-center justify-center bg-chart'>
-      <div>item 1</div>
+      <GrFormPreviousLink
+        size={40}
+        color='#F9D72F'
+        className=' cursor-pointer absolute left-0 top-0 my-20 mx-2 btn-prev'
+        onClick={() => navigate("/selectuser")}
+      />
+      <div className='text-success text-3xl m-5'>سال تحصیلی 1401-1402</div>
       <ResponsiveContainer width='80%' height='75%' className='hidden lg:block'>
         <BarChart
           width={500}

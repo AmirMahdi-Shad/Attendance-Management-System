@@ -42,19 +42,22 @@ const SelectUser = () => {
       </div>
     );
   return (
-    <div className='flex flex-wrap justify-center items-center'>
-      {stds &&
-        stds.map((std) => {
-          return (
-            <Student
-              key={std.id}
-              id={std.id}
-              name={std.name}
-              base={std.base}
-              unit={std.unit}
-            />
-          );
-        })}
+    <div className='flex flex-col bg-chart'>
+      <div></div>
+      <div className='flex flex-wrap justify-center items-center'>
+        {stds &&
+          stds.map((std) => {
+            return (
+              <Student
+                key={std.id}
+                id={std.id}
+                name={std.name}
+                base={std.base}
+                unit={std.unit}
+              />
+            );
+          })}
+      </div>
     </div>
   );
 };

@@ -29,3 +29,7 @@
 .h-dashboard-screen {
   height: calc(100vh - 67px);
 }
+.btn-prev {
+  background: #f9d72f;
+  border-radius: 50%;
+}
