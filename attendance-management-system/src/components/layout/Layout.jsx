@@ -20,11 +20,11 @@ const Layout = ({ children }) => {
       </div>
       <div className='drawer-side shadow-2xl'>
         <label htmlFor='my-drawer' className='drawer-overlay'></label>
-        <ul className='menu overflow-y-auto  bg-neutral text-neutral-content w-64 p-2 flex flex-col justify-between'>
+        <ul className='menu overflow-y-auto  bg-neutral text-primary w-64 p-2 flex flex-col justify-between'>
           {/* <!-- Sidebar content here --> */}
           <div>
             <Link to='/'>
-              <li>
+              <li className="border-2 border-primary rounded-lg m-5">
                 <a>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
               </li>
             </Link>
             <Link to='/addUsers'>
-              <li>
+              <li className="border-2 border-primary rounded-lg m-5">
                 <a>
                   <FcAddDatabase size={20} />
                   افزودن دانش آموز
@@ -54,7 +54,7 @@ const Layout = ({ children }) => {
             </Link>
 
             <Link to='/dailyattendance/selectClass'>
-              <li>
+              <li className="border-2 border-primary rounded-lg m-5">
                 <a>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -75,7 +75,7 @@ const Layout = ({ children }) => {
               </li>
             </Link>
             <Link to='/selectuser'>
-              <li>
+              <li className="border-2 border-primary rounded-lg m-5">
                 <a>
                   <FcComboChart size={20} />
                   آنالیز حضور

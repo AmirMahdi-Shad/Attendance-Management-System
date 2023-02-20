@@ -24,22 +24,22 @@ const HomePage = () => {
   };
   return (
     <div>
-      <div className="flex justify-between">
-        <div className="text-sm breadcrumbs">
+      <div className='flex justify-between'>
+        <div className='text-sm breadcrumbs'>
           <ul>
             <li>
               <button>
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  className="w-4 h-4 mr-2 stroke-current"
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  className='w-4 h-4 mr-2 stroke-current'
                 >
                   <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
+                    d='M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z'
                   ></path>
                 </svg>
                 خانه
@@ -48,16 +48,16 @@ const HomePage = () => {
             <li>
               <button>
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  className="w-4 h-4 mr-2 stroke-current"
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  className='w-4 h-4 mr-2 stroke-current'
                 >
                   <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
+                    d='M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z'
                   ></path>
                 </svg>
                 حضورغیاب
@@ -66,36 +66,36 @@ const HomePage = () => {
           </ul>
         </div>
         {/* filter */}
-        <label htmlFor="my-modal-5" className="btn btn-primary m-5">
+        <label htmlFor='my-modal-5' className='btn btn-primary m-5'>
           <HiFilter />
         </label>
         {isLoad ? (
           <input
-            type="checkbox"
-            id="my-modal-5"
-            className="modal-toggle"
+            type='checkbox'
+            id='my-modal-5'
+            className='modal-toggle'
             checked
           />
         ) : (
-          <input type="checkbox" id="my-modal-5" className="modal-toggle" />
+          <input type='checkbox' id='my-modal-5' className='modal-toggle' />
         )}
-        <div className="modal">
-          <div className="hero h-dashboard-screen">
+        <div className='modal'>
+          <div className='hero h-dashboard-screen'>
             <div
-              className="hero-content flex-col lg:flex-row
-            "
+              className='hero-content flex-col lg:flex-row
+            '
             >
               <img
                 src={logo}
-                alt="logo"
-                className="max-w-sm rounded-lg shadow-2xl h-96"
+                alt='logo'
+                className='max-w-sm rounded-lg shadow-2xl h-96'
               />
-              <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                <div className="card-body">
-                  <label htmlFor="my-modal-5" onClick={closeLoadHandler}>
-                    <MdClose color="red" className="cursor-pointer" size={30} />
+              <div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
+                <div className='card-body'>
+                  <label htmlFor='my-modal-5' onClick={closeLoadHandler}>
+                    <MdClose color='red' className='cursor-pointer' size={30} />
                   </label>
-                  <h3 className="font-bold text-lg">
+                  <h3 className='font-bold text-lg'>
                     {" "}
                     کلاس خود را انتخاب کنید
                   </h3>
@@ -104,10 +104,10 @@ const HomePage = () => {
                     setFilter={setFilter}
                     setSearch={setSearch}
                   />
-                  <div className="modal-action">
+                  <div className='modal-action'>
                     <label
-                      htmlFor="my-modal-5"
-                      className="btn"
+                      htmlFor='my-modal-5'
+                      className='btn'
                       onClick={closeLoadHandler}
                     >
                       ثبت

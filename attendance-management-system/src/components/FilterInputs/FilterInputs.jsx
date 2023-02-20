@@ -5,9 +5,9 @@ const FilterInputs = ({ filter, setFilter }) => {
   return (
     <div>
       <select
-        name="unit"
+        name='unit'
         onChange={changeHandler}
-        className="select select-bordered select-xs w-28 m-2 max-w-xs"
+        className='select select-bordered select-xs w-30 m-2 h-12 text-base max-w-xs bg-yellow-200 border-2 border-neutral text-neutral'
       >
         <option disabled selected>
           رشته
@@ -18,9 +18,9 @@ const FilterInputs = ({ filter, setFilter }) => {
         <option>ساختمان</option>
       </select>
       <select
-        name="base"
+        name='base'
         onChange={changeHandler}
-        className="select button select-xs w-20 m-2 max-w-xs"
+        className='select button select-xs w-24 m-2 h-12 text-base max-w-xs bg-yellow-200 border-2 border-neutral text-neutral'
       >
         <option disabled selected>
           پایه

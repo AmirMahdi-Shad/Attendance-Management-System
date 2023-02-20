@@ -66,6 +66,7 @@ const GraphPage = () => {
       .catch((err) => err);
   };
   useEffect(() => {
+    userData && navigate(0);
     chartHandler();
     if (userData) dataHandler();
   }, []);
