@@ -79,7 +79,7 @@ const Users = () => {
             <input
               type='text'
               placeholder='نام و نام خانوادگی'
-              className='input input-bordered border-neutral border-2 shadow-sm shadow-neutral w-full my-3 bg-sky-100'
+              className='input input-bordered border-neutral border-2 shadow-sm shadow-neutral w-full my-3 bg-amber-100'
               name='name'
               value={userData.name}
               onChange={changeHandler}
@@ -87,7 +87,7 @@ const Users = () => {
           </div>
           <div className='form-control'>
             <select
-              className='select select-accent w-full max-w-xs  border-neutral border-2 shadow-sm shadow-neutral my-3 bg-sky-100'
+              className='select select-accent w-full max-w-xs  border-neutral border-2 shadow-sm shadow-neutral my-3 bg-amber-100'
               onChange={changeHandler}
               name='unit'
               value={userData.unit}
@@ -103,7 +103,7 @@ const Users = () => {
           </div>
           <div className='form-control'>
             <select
-              className='select select-accent w-full max-w-xs  border-neutral border-2 shadow-sm shadow-neutral my-3 bg-sky-100'
+              className='select select-accent w-full max-w-xs  border-neutral border-2 shadow-sm shadow-neutral my-3 bg-amber-100'
               onChange={changeHandler}
               name='base'
               value={userData.base}
@@ -118,7 +118,7 @@ const Users = () => {
           </div>
           <div className='form-control'>
             <select
-              className='select select-accent w-full max-w-xs  border-neutral border-2 shadow-sm shadow-neutral my-3 bg-sky-100'
+              className='select select-accent w-full max-w-xs  border-neutral border-2 shadow-sm shadow-neutral my-3 bg-amber-100'
               onChange={changeHandler}
               name='field'
               value={userData.field}
