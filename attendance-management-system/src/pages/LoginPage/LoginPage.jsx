@@ -3,17 +3,17 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import logo from "../../img/login-logo.png";
-import timer from "../../Timer/Timer";
+// import timer from "../../Timer/Timer";
 
 const LoginPage = () => {
   const [loginData, setLoginData] = useState({ username: "", password: "" });
   const navigate = useNavigate();
-  const [timerRange, setTimerRange] = useState({
-    days: "00",
-    hours: "00",
-    minutes: "00",
-    seconds: "00",
-  });
+  // const [timerRange, setTimerRange] = useState({
+  //   days: "00",
+  //   hours: "00",
+  //   minutes: "00",
+  //   seconds: "00",
+  // });
 
   const changeHandler = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
@@ -45,9 +45,9 @@ const LoginPage = () => {
       );
   };
   useEffect(() => {
-    setInterval(() => {
-      setTimerRange(timer());
-    }, 1000);
+    // setInterval(() => {
+    //   setTimerRange(timer());
+    // }, 1000);
   }, []);
 
   return (
@@ -90,7 +90,7 @@ const LoginPage = () => {
           </div>
         </div>
         {/* timer */}
-        <div className='grid grid-flow-row gap-5 text-center auto-cols-max fixed left-0'>
+        {/* <div className='grid grid-flow-row gap-5 text-center auto-cols-max fixed left-0'>
           <div className='flex flex-col'>
             <span className='font-mono text-5xl'>
               <span>{timerRange.days}</span>
@@ -116,7 +116,7 @@ const LoginPage = () => {
             </span>
             ثانیه
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

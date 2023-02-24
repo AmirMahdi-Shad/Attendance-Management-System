@@ -72,6 +72,9 @@ const HomePage = () => {
         {isLoad ? (
           <input
             type='checkbox'
+            onChange={()=>{
+              console.log("on change has been ran")
+            }}
             id='my-modal-5'
             className='modal-toggle'
             checked

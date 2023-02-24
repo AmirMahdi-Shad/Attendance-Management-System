@@ -6,10 +6,11 @@ const FilterInputs = ({ filter, setFilter }) => {
     <div>
       <select
         name='unit'
+        defaultValue={'DEFAULT'} 
         onChange={changeHandler}
         className='select select-bordered select-xs w-30 m-2 h-12 text-base max-w-xs bg-yellow-200 border-2 border-neutral text-neutral'
       >
-        <option disabled selected>
+        <option disabled selected value={'DEFAULT'}>
           رشته
         </option>
         <option>کامپیوتر</option>
@@ -19,10 +20,11 @@ const FilterInputs = ({ filter, setFilter }) => {
       </select>
       <select
         name='base'
+        defaultValue={'DEFAULT'} 
         onChange={changeHandler}
         className='select button select-xs w-24 m-2 h-12 text-base max-w-xs bg-yellow-200 border-2 border-neutral text-neutral'
       >
-        <option disabled selected>
+        <option disabled selected value={'DEFAULT'}>
           پایه
         </option>
         <option>10</option>

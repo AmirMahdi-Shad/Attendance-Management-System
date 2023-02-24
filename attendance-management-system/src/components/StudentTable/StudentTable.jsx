@@ -139,9 +139,10 @@ const StudentTable = ({
           <div className="modal-action">
             <select
               onChange={courseHandler}
+              defaultValue={'DEFAULT'} 
               className="select select-bordered select-xs w-28 m-2 max-w-xs"
             >
-              <option disabled selected>
+              <option disabled selected value={'DEFAULT'}>
                 نام درس
               </option>
               <option>ریاضی</option>
