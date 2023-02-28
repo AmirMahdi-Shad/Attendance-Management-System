@@ -78,6 +78,7 @@ const Users = () => {
           <div className='form-control'>
             <input
               type='text'
+              autocomplete='off'
               placeholder='نام و نام خانوادگی'
               className='input input-bordered border-neutral border-2 shadow-sm shadow-neutral w-full my-3 bg-amber-100'
               name='name'

@@ -182,6 +182,7 @@ const SelectClass = ({ setAttenData }) => {
             </div>
             <input
               type='text'
+              autocomplete='off'
               placeholder='تاریخ'
               name='date'
               onChange={changeHandler}
